@@ -1,14 +1,17 @@
+/*-------------------------------- Constants --------------------------------*/
 const buttons = document.querySelectorAll('.button')
 const display = document.querySelector('.display p')
-let currentValue = 0
+
+/*-------------------------------- Variables --------------------------------*/
+let currentValue = ''
 let operator = ''
 let firstValue = null
 let isResultDisplayed = false
 
+/*----------------------------- Event Listeners -----------------------------*/
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     const buttonValue = button.textContent
-
     if (button.classList.contains('number')) {
       if (isResultDisplayed) {
         currentValue = ''
@@ -44,6 +47,8 @@ buttons.forEach((button) => {
     }
   })
 })
+
+/*-------------------------------- Functions --------------------------------*/
 
 function calculate(num1, num2, operator) {
   switch (operator) {
